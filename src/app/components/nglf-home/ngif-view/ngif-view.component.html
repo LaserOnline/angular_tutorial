@@ -1,0 +1,10 @@
+<div *ngIf="state">
+  <h1 [style.font-size.px]="size">Wallpaper</h1>
+  <img
+    [src]="image"
+    [style.width.px]="width"
+    [style.height.px]="height"
+    alt="Wallpaper"
+    ngNonBindable
+  />
+</div>

@@ -1,0 +1,19 @@
+<app-ngif-view
+  [size]="size"
+  [width]="width"
+  [height]="height"
+  [state]="show"
+></app-ngif-view>
+<br />
+<div>
+  <button type="button" class="btn btn-danger" (click)="status(true)">
+    Open
+  </button>
+  <button type="button" class="btn btn-danger" (click)="status(false)">
+    closed
+  </button>
+  <br />
+  <button type="button" class="btn btn-danger" (click)="fuc_sized(1)">
+    Size
+  </button>
+</div>

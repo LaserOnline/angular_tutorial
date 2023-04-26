@@ -1,0 +1,32 @@
+<h1>{{ title }}</h1>
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input
+      type="email"
+      [formControl]="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+    />
+    <span *ngIf="email.invalid && email.touched"> กรุณาใส่ Email </span>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input
+      type="password"
+      [formControl]="password"
+      class="form-control"
+      id="exampleInputPassword1"
+    />
+  </div>
+  <div class="mb-3 form-check">
+    <span *ngIf="password.invalid && password.touched">
+      กรุณาใส่ Password
+    </span>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="getForm()">
+    Submit
+  </button>
+</form>
+<h1>{{ message }}</h1>

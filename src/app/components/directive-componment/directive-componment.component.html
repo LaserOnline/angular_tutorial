@@ -1,0 +1,7 @@
+<h1>{{ title }}</h1>
+<input (appHttpBook)="bookList = $event" type="text" />
+<br />
+<input (appHttpBook)="bookList = $event" type="text" />
+<h1 *ngIf="bookList != null">
+  {{ bookList | json }}
+</h1>

@@ -1,0 +1,64 @@
+<hr />
+<h1>การใช้ Validator และสร้าง Module ตรวจสอบบัตรประชาชน</h1>
+<div>
+  <div>ID Card:</div>
+  <input type="text" [formControl]="idCard" />
+</div>
+<span
+  class="error-message"
+  *ngIf="idCard.invalid && idCard.errors?.['required'] && idCard.touched"
+  >This Field is required
+</span>
+<span
+  class="error-message"
+  *ngIf="idCard.invalid && idCard.errors?.['minlength'] && idCard.touched"
+>
+  Minimum length is 5 characters.
+</span>
+{{ idCard.errors | json }}
+<br />
+<div>
+  <div>ID Card User:</div>
+  <input type="text" [formControl]="idCard_User" />
+</div>
+<span
+  class="error-message"
+  *ngIf="idCard_User.invalid && idCard_User.errors?.['required'] && idCard_User.touched"
+  >This Field is required
+</span>
+<span
+  class="error-message"
+  *ngIf="idCard_User.invalid && idCard_User.errors?.['idCardLength'] && idCard_User.touched"
+>
+  เลขบัตรประชาชน ต้องมี 13 หลัก
+</span>
+
+<span
+  class="error-message"
+  *ngIf="idCard_User.invalid && idCard_User.errors?.['idCardFormat'] && idCard_User.touched"
+>
+  เลขบัตรประชาชน ไม่มีตัวอักษร
+</span>
+<span
+  class="error-message"
+  *ngIf="idCard_User.invalid && idCard_User.errors?.['idCardChecksum'] && idCard_User.touched"
+>
+  รูปแบบ บัตรประชาชนของคุณไม่ถูกต้อง
+</span>
+<span
+  class="success-message"
+  *ngIf="
+    idCard_User.valid &&
+    (idCard_User.dirty || idCard_User.touched) &&
+    !idCard_User.errors?.['idCard_User']
+  "
+>
+  ผ่าน
+</span>
+<!-- {{ idCard_User.errors | json }} -->
+<hr />
+<app-form-validation></app-form-validation>
+<br />
+<hr />
+<app-form-register></app-form-register>
+<br />

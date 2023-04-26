@@ -1,0 +1,30 @@
+::ng-deep {
+  body,
+  html {
+    height: 100%;
+  }
+  body {
+    background-color: orange;
+  }
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+  background-color: #fff;
+  padding: 2% 5%;
+}
+
+button {
+  background-color: black;
+  color: white;
+}
+
+button:hover {
+  background-color: greenyellow;
+  color: black;
+}
+
+.error {
+  color: red;
+}

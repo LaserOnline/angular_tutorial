@@ -1,0 +1,16 @@
+<div>
+  <input
+    type="text"
+    placeholder="State"
+    aria-label="Username"
+    [(ngModel)]="state"
+  />
+  <button class="btn btn-danger" (click)="sendState()">send</button>
+</div>
+<p>กด F12 เพื่อดู console.log</p>
+<div [ngSwitch]="state">
+  <p *ngSwitchCase="'Success'">Success!</p>
+  <p *ngSwitchCase="'Warning'">Warning!</p>
+  <p *ngSwitchCase="'ban'">Banned!</p>
+  <p *ngSwitchDefault>{{ state }}</p>
+</div>

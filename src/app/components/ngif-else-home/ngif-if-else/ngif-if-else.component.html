@@ -1,0 +1,22 @@
+<div *ngIf="isAuthenticated; else loggedOutBlock">
+  <h1>Welcome, {{ username }}!</h1>
+  <p>You are logged in.</p>
+  <button class="btn btn-danger" (click)="ChangeisAuthenticated(false)">
+    Logout
+  </button>
+</div>
+
+<ng-template #loggedOutBlock>
+  <h1>Log in to access content</h1>
+  <p>Please log in to view this page.</p>
+  <button class="btn btn-danger" (click)="ChangeisAuthenticated(true)">
+    Login
+  </button>
+</ng-template>
+<br />
+
+<p *ngIf="status === 'Success'">HelloWorld</p>
+<p *ngIf="count < 10">ถ้าน้อยกว่า</p>
+<p *ngIf="count > 10">ถ้ามากกว่า</p>
+<p *ngIf="username === 'LaserOnline' && status === 'Success'">Success &&</p>
+<p *ngIf="count > 1 || count < 0">Success OR</p>
