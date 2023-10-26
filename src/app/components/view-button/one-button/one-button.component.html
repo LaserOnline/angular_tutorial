@@ -1,1 +1,19 @@
-<p>one-button works!</p>
+<button (click)="show()">My Button 1</button>
+<!-- ใช้เมื่อเมาส์เข้าไป Hover บน element -->
+<button (mouseenter)="onMouseEnter()">Hover me</button>
+<!--  ใช้เมื่อเมาส์ออกจาก element หลังจากที่ Hover -->
+<button (mouseleave)="onMouseLeave()">Hover me and leave</button>
+<!-- ใช้เมื่อมีการเปลี่ยนค่าใน input field -->
+<input (input)="onInputChange($event)" placeholder="Type something" />
+<!-- ใช้เมื่อมีการส่งฟอร์ม (form) โดยปกติใช้ในฟอร์ม -->
+<form (ngSubmit)="onFormSubmit()">
+  <input type="text" name="username" placeholder="Username" />
+  <input type="password" name="password" placeholder="Password" />
+  <button type="submit">Submit</button>
+</form>
+
+<!-- ใช้เมื่อขนาดหน้าต่างเบราว์เซอร์ถูกเปลี่ยนแปลง -->
+<div (window:resize)="onWindowResize($event)">Window Resize Event</div>
+
+
+
